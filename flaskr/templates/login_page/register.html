@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <h1>Register by entering a username</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div>
+                <input type="text" name="id_field" value="">
+            </div>
+            <div>
+                <input type="submit" name="Register" value="Register">
+            </div>
+            {% if exist %}
+                <p>Username already exists</p>
+            {% endif %}
+            <p>{{text_info}}</p>
+        </form>
+        <div>
+            <form action="/login">
+                <input type="submit" name="LoginPage" value="Login">
+            </form>
+        </div>
+    </body>
+</html>

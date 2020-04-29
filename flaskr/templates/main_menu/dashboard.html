@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block title %} Dashboard {% endblock %}
+
+{% block main %}
+<div class="items">
+    <!-- <div class=items_header>
+        <li style="display: inline; position: relative; left: 100px; top: 10px;">Name</li>
+        <li style="display: inline; position: relative; left: 500px;top: 10px;">Qty</li>
+    </div> -->
+    {% for i in items%}
+    <div class=item>
+        <img class="item_img" src="/static/{{img_link[loop.index0]}}" width="50" height="50"/>
+        <li class="item_info1">{{i}}</li>
+        <li class="item_info2">{{date[loop.index0]}}</li>
+        <li class="item_info3">{{qty[loop.index0]}}</li>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

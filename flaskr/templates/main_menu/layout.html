@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} {% endblock %} - Beta</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+    </head>
+    <body>
+        <div class="bar_navig">
+            {% for i in ["dashboard","suggestions", "history", "missing"] %}
+                <a class="navig" href="{{i}}">{{i}}</a>
+            {% endfor %}
+                <a class="navig" href="/login" style="margin-left: 200px;">Logout</a>
+        </div>
+        {% block main %}
+        {% endblock%}
+    </body>
+</html>
