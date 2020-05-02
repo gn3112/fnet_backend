@@ -3,18 +3,43 @@
 {% block title %} Dashboard {% endblock %}
 
 {% block main %}
-<div class="items">
-    <!-- <div class=items_header>
-        <li style="display: inline; position: relative; left: 100px; top: 10px;">Name</li>
-        <li style="display: inline; position: relative; left: 500px;top: 10px;">Qty</li>
-    </div> -->
-    {% for i in items%}
-    <div class=item>
-        <img class="item_img" src="/static/{{img_link[loop.index0]}}" width="50" height="50"/>
-        <li class="item_info1">{{i}}</li>
-        <li class="item_info2">{{date[loop.index0]}}</li>
-        <li class="item_info3">{{qty[loop.index0]}}</li>
+<div class="main" id="main">
+    <div id="container_item">
+        <div class="items" id="items">
+            <!-- <div class=items_header>
+                <li style="display: inline; position: relative; left: 100px; top: 10px;">Name</li>
+                <li style="display: inline; position: relative; left: 500px;top: 10px;">Qty</li>
+            </div> -->
+            {% for i in items_name%}
+            <div class="item">
+                <div class="grid-container">
+                    <div> <img class="item_img" src="/static/{{img_link[loop.index0]}}" width="50" height="50"/> </div>
+                    <div class="item_info1">{{i}}</div>
+                    <div class="item_info2">{{date[loop.index0]}}</div>
+                    <div class="item_info3">{{qty[loop.index0]}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
     </div>
-    {% endfor %}
+    <div class="camera">
+        <div class = "camera_feed">
+            <img id="camera_img" src="/image_capture/{{feed_image}}" width="170" height="170"/>
+        </div>
+        <form id="image_capture" method="POST" enctype="multipart/form-data">
+            <input name="capture" type="button" class="capture" value="Capture"/>
+        </form>
+    </div>
 </div>
+
+
+
+<script>
+    setInterval(reloadItem, 3000);
+    setInterval(() => document.getElementById('camera_img').src = '/image_capture/test.jpeg?' + Date.now(), 100);
+    function reloadItem() {
+        $('#container_item').load(document.URL + " #items");
+    }
+</script>
 {% endblock %}
+
