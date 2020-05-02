@@ -9,9 +9,9 @@ div.items{
     border: 0.05cm solid white;
     padding: 10px;
     border-radius: 0.2cm;
-    margin-top: 100px;
-    margin-left: 200px;
-    margin-right: auto;
+    /* margin-top: 100px;
+    margin-left: 200px; */
+    /* margin-right: auto; */
     width: 800px;
     height: 600px;
 }
@@ -41,11 +41,7 @@ a.navig{
 }
 
 a.navig:hover, a.navig:active{
-    background-color: blue;
     color: rgb(31, 30, 30);
-}
-a.navig:visited{
-    background-color: blue;
 }
 
 div.items_header{
@@ -63,9 +59,18 @@ div.item{
     margin-bottom: 10px;
     }
         
-img.item_img{
+/* img.item_img{
     padding: 5px;
     z-index: -2;
+} */
+
+/* li.item_info1{
+    display: inline; 
+    position: relative; 
+    left: 50px;
+    top: -25px; 
+    border-right: 1px solid rgb(235, 231, 231); 
+    padding-right: 30px;
 }
 
 li.item_info2{
@@ -77,25 +82,61 @@ li.item_info2{
     padding-right: 80px;
 }
 
-li.item_info1{
-    display: inline; 
-    position: relative; 
-    left: 50px;
-    top: -25px; 
-    border-right: 1px solid rgb(235, 231, 231); 
-    padding-right: 30px;
-}
-
 li.item_info3{
     display: inline; 
     position: relative; 
-    left: 430px;
+    left: 300px;
     top: -25px;
+} */
+
+.grid-container{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    align-items: center;
+    padding-top: 5px;
+    padding-left: 5px;
 }
 
+.grid-container > div {
+    text-align: start;
+}
+
+.main{
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-top: 100px;
+    margin-left: 200px;
+}
+
+div.camera_feed{
+    border: 0.05cm solid white;
+    padding-top: 10px;
+    padding-left: 10px;
+    border-radius: 0.2cm;
+    margin-top: 100px;
+    /* margin-left: 20px; */
+    /* margin-right: auto; */
+    width: 180px;
+    height: 180px;
+}
 
 div.logout{
     position: absolute;
     left: 1200px;
 }
 
+input.capture {
+    background-color: aliceblue;
+    border: none;
+    border-radius: 10px;
+    padding: 5px 20px;
+    display: inline-block;
+    text-align: center;
+    margin-top: 30px;
+    position: relative;
+    left: 55px;
+    cursor: pointer;
+}
+input.capture:hover, input.capture:active {
+    background-color: rgba(240, 248, 255, 0.774);
+}
