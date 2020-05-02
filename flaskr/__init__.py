@@ -41,10 +41,11 @@ def create_app(test_config=None):
         print(camera_status)
         return str(camera_status), 200
 
-    from . import image_capture, login_page, main_menu
+    from . import image_capture, login_page, main_menu, admin
     app.register_blueprint(image_capture.bp)
     app.register_blueprint(login_page.bp)
     app.register_blueprint(main_menu.bp)
+    app.register_blueprint(admin.bp)
     
     return app
 

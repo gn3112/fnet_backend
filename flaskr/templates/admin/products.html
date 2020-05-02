@@ -1,0 +1,22 @@
+{% extends "admin/layout.html" %}
+
+{% block title %} Products {% endblock %}
+
+
+{% block main %}
+<div class="main" id="main">
+    <div id="container_item">
+        <div class="items" id="items">
+            {% for i in products %}
+            <div class="item">
+                <div class="grid-container">
+                    <div> <img class="item_img" src="/static/{{img_link[loop.index0]}}" width="50" height="50"/> </div>
+                    <div class="item_info1">{{i}}</div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+{% endblock %}

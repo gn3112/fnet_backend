@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %} {% endblock %} - Beta</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/mystyle.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/admin.css') }}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    </head>
+    <body>
+        <div class="bar_navig">
+            {% for i in ["products","users"] %}
+                <a class="navig" href="{{i}}">{{i}}</a>
+            {% endfor %}
+                <a class="navig" href="/login" style="margin-left: 200px;">Logout</a>
+        </div>
+            {% block main %}
+            {% endblock%}
+    </body>
+</html>

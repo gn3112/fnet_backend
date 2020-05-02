@@ -1,0 +1,16 @@
+a.navig{
+    left: 35%;
+}
+
+div.main{
+    display: grid;
+    grid-template-columns: auto;
+}
+
+div.container_users{
+    margin-top: 50px;
+}
+
+div.items{
+    margin-top: 20px;
+}
